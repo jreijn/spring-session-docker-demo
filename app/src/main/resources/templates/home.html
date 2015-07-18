@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Single sign-on demo</title>
+</head>
+<body>
+<h1 th:inline="text">Welcome from: [[${host}]]!</h1>
+
+<p>Click <a th:href="@{/hello}">here</a> to see a greeting (might require you to login first).</p>
+</body>
+</html>
