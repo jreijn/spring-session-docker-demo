@@ -4,7 +4,8 @@
     <title>Single sign-on demo</title>
 </head>
 <body>
-<h1 th:inline="text">Welcome from: [[${host}]]!</h1>
+<h1 th:inline="text">Welcome!</h1>
+<h2 th:inline="text">You are currently on server with name: [[${host}]]</h2>
 
 <p>Click <a th:href="@{/hello}">here</a> to see a greeting (might require you to login first).</p>
 </body>
