@@ -13,5 +13,6 @@ haproxy:
         - BACKEND_PORT=8080
 db:
   image: redis
+  hostname: redis
   ports:
     - "6379:6379"
