@@ -1,5 +1,7 @@
 app:
     build: app
+    links:
+      - "db:redis"
 haproxy:
     image: tutum/haproxy
     ports:
@@ -9,3 +11,7 @@ haproxy:
         - app
     environment:
         - BACKEND_PORT=8080
+db:
+  image: redis
+  ports:
+    - "6379:6379"
