@@ -1,0 +1,11 @@
+app:
+    build: app
+haproxy:
+    image: tutum/haproxy
+    ports:
+      - "80:80"
+      - "1936:1936"
+    links:
+        - app
+    environment:
+        - BACKEND_PORT=8080
