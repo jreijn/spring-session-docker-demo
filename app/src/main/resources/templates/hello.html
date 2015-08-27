@@ -3,12 +3,21 @@
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
     <title>Hello World!</title>
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/3.2.0/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/3.2.0/css/bootstrap.min.css}" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" media="all"
+          href="/css/style.css" th:href="@{css/style.css}" />
 </head>
 <body>
-<h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
-<h2 th:inline="text">You are currently on server with name: [[${host}]]</h2>
-<form th:action="@{/logout}" method="post">
-    <input type="submit" value="Sign Out"/>
-</form>
+    <div class="jumbotron">
+        <div class="container">
+            <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+            <h2 th:inline="text">You are currently on server with name: [[${host}]]</h2>
+            <form th:action="@{/logout}" method="post">
+                <input type="submit" value="Sign Out »" class="btn btn-primary btn-lg"/>
+            </form>
+        </div>
+    </div>
 </body>
 </html>

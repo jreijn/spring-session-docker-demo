@@ -2,11 +2,19 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Single sign-on demo</title>
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/3.2.0/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/3.2.0/css/bootstrap.min.css}" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" media="all"
+          href="/css/style.css" th:href="@{css/style.css}" />
 </head>
 <body>
-<h1 th:inline="text">Welcome!</h1>
-<h2 th:inline="text">You are currently on server with name: [[${host}]]</h2>
+<div class="jumbotron">
+    <div class="container">
+        <h1 th:inline="text">Welcome!</h1>
+        <h2 th:inline="text">You are currently on server with name: [[${host}]]</h2>
 
-<p>Click <a th:href="@{/hello}">here</a> to see a greeting (might require you to login first).</p>
+        <p>Click <a th:href="@{/hello}">here</a> to see a greeting (might require you to login first).</p>
+    </div>
+</div>
 </body>
 </html>
