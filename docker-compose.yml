@@ -1,18 +1,26 @@
-app:
+db:
+  image: redis:3.0.3
+  hostname: redis
+  ports:
+    - "6379:6379"
+app1:
+    build: app
+    links:
+      - "db:redis"
+app2:
+    build: app
+    links:
+      - "db:redis"
+app3:
     build: app
     links:
       - "db:redis"
 haproxy:
-    image: tutum/haproxy
+    image: tutum/haproxy:0.2
     ports:
       - "80:80"
       - "1936:1936"
     links:
-        - app
-    environment:
-        - BACKEND_PORT=8080
-db:
-  image: redis
-  hostname: redis
-  ports:
-    - "6379:6379"
+        - app1
+        - app2
+        - app3
